@@ -136,10 +136,6 @@ font-family: 'DM Sans', sans-serif;
 font-family: 'Inter', sans-serif;
 font-family: 'Gilroy', sans-serif;
 */
-* {
-  border: 1px solid lightgray;
-}
-
 .none {
   display: none !important;
 }

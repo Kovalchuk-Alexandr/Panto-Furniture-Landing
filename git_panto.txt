@@ -6,7 +6,7 @@ echo "# Panto-Furniture-Landing" >> README.md
   git remote add origin https://github.com/Kovalchuk-Alexandr/Panto-Furniture-Landing.git
   git push -u origin master
 
-https://kovalchuk-alexandr.github.io/Elegance/
+https://kovalchuk-alexandr.github.io/Panto-Furniture-Landing/
 
 Description:
 Layout of the main page of an online store with JavaScript interactivity, tabs and Swiper slider, and mobile adaptation.
