@@ -1,0 +1,38 @@
+.tab-contorls {
+    display: inline-flex;
+    padding: 6px;
+    align-items: center;
+    border-radius: 44px;
+    background: #EEE;
+}
+
+.tab-controls__btn {
+    // display: flex;
+    width: 84px;
+    height: 45px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    // gap: 10px;
+
+    border-radius: 32px;
+    border: none;
+    // background: #FFF;
+
+    color: rgba(31, 31, 31, 0.8);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8; /* 33.3px */
+
+    transition: background-color 0.2s ease-in;
+    
+
+    &:hover:not(&--active) {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &--active {
+        background-color: #fff;
+
+    }
+}

@@ -1,0 +1,15 @@
+/* Используем 'GRID', чтобы верно центрировать меню, поскольку из-за разной ширины 
+лого и корзины оно не буде позиционироваться правильно */
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    gap: 20px;
+}
+
+.nav__logo {
+    align-self: center;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.28px;
+    text-transform: capitalize;
+}

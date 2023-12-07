@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panto</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header class="header ">
+        <div class="container">
+
+            <nav class="header__nav nav">
+
+                <a href="#!" class="nav__logo">Panto</a>
+    
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="#!" class="nav-list__link">Furniture</a></li>
+                    <li class="nav-list__item"><a href="#!" class="nav-list__link">Shop</a></li>
+                    <li class="nav-list__item"><a href="#!" class="nav-list__link">About Us</a></li>
+                    <li class="nav-list__item"><a href="#!" class="nav-list__link">Contact</a></li>
+                </ul>
+
+
+                <!-- Корзина покупок
+                    подразумеваем, что по нажатию будет переход на новую страницу
+                    возможен вариант открытия блока покупок на этой -->
+                <a href="#!" class="cart">
+                    <img src="./img/icons/cart.svg" alt="Cart" class="cart__img">
+                    <div class="cart__count">0</div>
+                </a>
+                
+            </nav>
+
+            <div class="header__content">
+                <h1 class="header_title">Make your interior more minimalistic & modern</h1>
+
+                <p>Turn your room with panto into a lot more minimalist<br> and modern with ease and speed</p>
+
+                <form action="" class="header__search search-form">
+                    <input type="text" class="search-form__input" placeholder="Search furniture">
+                    <button class="search-form__btn">
+                        <img src="./img/icons/search.svg" alt="Search">
+                    </button>
+                </form>
+
+            </div>
+
+            <div id="vase" class="visible"></div>
+            <div id="item" class="visible"></div>
+            <div id="pot" class="visible"></div>
+
+            <div class="header__dot-sofa">
+                <button class="info-dot">
+                    <div class="info-dot__circle"></div>
+                    <div class="info-dot__radius"></div>
+                </button>
+
+                <div class="info-hint none">
+                    <label>
+                        <input type="radio" name="sofa-color" id="orange" class="info-hint__radio" value="ORANGE" checked="checked">
+                        <div class="info-hint__radio-fake info-hint__radio-fake--orange"></div>
+                    </label>
+
+                    <label >
+                        <input type="radio" name="sofa-color" id="biruza" class="info-hint__radio" value="BIRUZA">
+                        <div class="info-hint__radio-fake info-hint__radio-fake--biruza"></div>
+                    </label>
+
+                    <label >
+                        <input type="radio" name="sofa-color" id="gray" class="info-hint__radio" value="GRAY">
+                        <div class="info-hint__radio-fake info-hint__radio-fake--gray"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="header__dot-vase" title="Hide">
+                <button class="info-dot">
+                    <div class="info-dot__circle"></div>
+                    <div class="info-dot__radius"></div>
+                </button>
+            </div>
+
+            <div class="header__dot-item" title="Hide">
+                <button class="info-dot">
+                    <div class="info-dot__circle"></div>
+                    <div class="info-dot__radius"></div>
+                </button>
+            </div>
+
+            <div class="header__dot-pot" title="Hide">
+                <button class="info-dot">
+                    <div class="info-dot__circle"></div>
+                    <div class="info-dot__radius"></div>
+                </button>
+            </div>
+            
+        </div>
+
+    </header>
+
+    <section class="benefits ">
+        <div class="container">
+            <div class="benefits__grid">
+
+                <h2 class="benefits___title">Why Choosing Us</h2>
+                
+                <div class="benefit">
+                    <div class="benefit__title">Luxury facilities</div>
+
+                    <p class="benefit__text">
+                        The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+                    </p>
+                    
+                    <a href="#!" class="read-more">More Info</a>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit__title">Affordable Price</div>
+
+                    <p class="benefit__text">
+                        You can get a workspace of the highst quality at an affordable price and still enjoy the facilities that are oly here.
+                    </p>
+
+                    <a href="#!" class="read-more">More Info</a>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit__title">Many Choices</div>
+
+                    <p class="benefit__text">
+                        We provide many unique work space choices so that you can choose the workspace to your liking.
+                    </p>
+
+                    <a href="#!" class="read-more">More Info</a>
+                </div>
+ 
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="products">
+        <div class="container">
+
+            <h2 class="products__title">Best Selling Product</h2>            
+            <div class="products__tabs">
+
+                <div class="tab-contorls">
+                    <button class="tab-controls__btn tab-controls__btn--active">Chair</button>
+                    <button class="tab-controls__btn">Beds</button>
+                    <button class="tab-controls__btn">Sofa</button>
+                    <button class="tab-controls__btn">Lamp</button>
+                 </div>
+            </div>
+
+            <div class="products__slider">
+
+                <div class="card">
+                    <a href="#product-page" class="card__link"></a>
+                    <div class="card__photo">
+                        <!-- для rethina указываем srcset"...2x" -->
+                        <img src="./img/products/chair-01.png" srcset="./img/products/chair-01@2x.png 2x" alt="Chair01" class="card__img">
+                    </div>
+                    <div class="card__desc">
+
+                        <div class="card__category">Chair</div>
+                        <h3 class="card__title">Sakarias Armchair</h3>
+
+                        <div class="card__rating">
+                            <img src="./img/icons/star.svg" alt="">
+                            <img src="./img/icons/star.svg" alt="">
+                            <img src="./img/icons/star.svg" alt="">
+                            <img src="./img/icons/star.svg" alt="">
+                            <img src="./img/icons/star-off.svg" alt="">
+                        </div>
+
+                        <div class="card__footer">
+                            <div class="card__price" data-value="&euro;">392</div>
+                            <button class="card__btn">Add to cart
+                                <img src="./img/icons/plus.svg" alt="Add to cart">
+                            </button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="products__link">
+                <a href="#!" class="read-more  read-more--large">View All</a>
+            </div>
+
+        </div>
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+</html>

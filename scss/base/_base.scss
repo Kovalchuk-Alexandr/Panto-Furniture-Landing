@@ -1,0 +1,36 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@400;600&display=swap');
+
+/*
+font-family: 'DM Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Gilroy', sans-serif;
+*/
+
+* {
+    border: 1px solid lightgray;
+}
+
+.none {
+    display: none !important;
+}
+
+.visible {
+    opacity: 1 !important;
+}
+
+html, body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+}
+
+body {
+    padding-bottom: 20vh;
+}
+
+.container {
+    max-width: 1310px;  // w-1280 + 2 * 15 (padding) = 1310
+    padding: 0 15px;
+    margin: 0 auto;
+}
+

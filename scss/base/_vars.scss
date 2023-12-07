@@ -1,0 +1,43 @@
+:root {
+    --text-color: #1E1E1E;
+    --accent: #E58411;
+    --text-muted: #8D8D8D;
+    --text-card-darkblue: #0D1B39;
+
+    --header-text-color: #fff;
+
+    --footer-text-color: #fff;
+    --footer-accent: #F6973F;
+    --footer-bg: #2D2F33;
+ 
+    --ui-orange: #E58411;
+    --ui-biruza: #00D6C9;
+    --ui-gray: #7C7C7C;
+    --ui-darkblue: #0D1B39;
+
+    --bg-img-origin: url('./../img/header/header-bg.jpg');
+    --bg-img-orange: url('./../img/header/bg-orange.jpg');
+    --bg-img-biruza: url('./../img/header/bg-biruza.jpg');
+    --bg-img-gray: url('./../img/header/bg-gray.jpg');
+
+    --font-main: 'Gilroy', sans-serif;
+    --font-cards: 'Inter', sans-serif;
+    --font-footer-accent: 'DM Sans', sans-serif;
+
+}
+
+
+@mixin retina-bg ($image) {
+    // Retina Display Media Query
+   @media 
+        (-webkit-min-device-pixel-ratio: 2), 
+        (min-resolution: 192dpi) { 
+            background-image: $image;
+            /* Retina-specific stuff here */
+        } 
+}
+
+
+// body {
+//     color: var(--textColor);
+// }

@@ -1,0 +1,162 @@
+.header {
+    position: relative;
+
+    padding-top: 40px;
+
+    background-color: var(--footer-bg);
+    background-image: var(--bg-img-orange);           //url('./../img/header/header-bg.jpg');
+    // background-image: url("./../img/header/vase.png"); 
+    background-size: cover;
+    aspect-ratio: 1440 / 1084;  //позволяет сохранить пропорции фона
+
+    color: var(--header-text-color);
+
+    &.orange {
+        background-image: var(--bg-img-orange);
+    }
+
+    &.biruza {
+        background-image: var(--bg-img-biruza);
+    }
+
+    &.gray {
+        background-image: var(--bg-img-gray);
+    }
+
+
+    a {
+        color: var(--header-text-color);
+    }
+
+    // Заменяем миксином нижний код
+    @include retina-bg('./../img/header/header-bg@2x.jpg');
+
+    // Retina Display Media Query
+    // @media 
+    //     (-webkit-min-device-pixel-ratio: 2), 
+    //     (min-resolution: 192dpi) { 
+    //         background-image: url('./../img/header/header-bg@2x.jpg');
+    //         /* Retina-specific stuff here */
+    //     }
+
+    // max-width: 1440px;
+    // margin: 0 auto;
+}
+
+.header__nav {
+    position: relative;
+    z-index: 4;
+    margin-bottom: 86px;
+}
+
+// ----------  Header Content  ----------  
+.header__content {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+}
+
+.header_title {
+    margin-bottom: 14px;
+    
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3; /* 104px */
+    letter-spacing: -0.8px;
+    text-transform: capitalize;
+}
+
+.header__content p {
+    margin: 0 auto;
+    max-width: 606px;
+    opacity: 0.8;
+    font-size: 24px;
+    // font-weight: 400;
+    line-height: 1.6; /* 38.4px */
+}
+
+.header__search {
+    margin: 45px auto 0;
+}
+
+// ----------  Elements  ----------
+#vase {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url("./../img/header/vase.png");           //url('./../img/header/header-bg.jpg');
+    background-size: cover;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    
+    // aspect-ratio: 1440 / 1084;
+    // z-index: 3;
+}
+#item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url("./../img/header/souvenir.png");           //url('./../img/header/header-bg.jpg');
+    background-size: cover;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    // aspect-ratio: 1440 / 1084;
+    // z-index: 3;
+}
+
+#pot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url("./../img/header/pot.png");           //url('./../img/header/header-bg.jpg');
+    background-size: cover;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    // aspect-ratio: 1440 / 1084;
+    // z-index: 3;
+}
+
+// ----------  Dots  ----------
+
+.header__dot-sofa {
+    position: absolute;
+    left: calc(296 * 100% / 1440); //w:1440 - 100% //296 = x // x = 296/1440*100 = 20.56%
+    top: calc(685 * 100% / 1084) ;     //h:1084- 100% //685 = x // x = 685/1084*100 = 63.19
+
+    text-align: center;
+    transform: translate(-50%, -15%);
+    z-index: 4;
+    
+}
+
+.header__dot-vase {
+    position: absolute;
+    left: calc(113.86 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
+    top: calc(753.86 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+.header__dot-item {
+    position: absolute;
+    left: calc(810.86 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
+    top: calc(787.86 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
+    transform: translate(-50%, -30%);
+}
+.header__dot-pot {
+    position: absolute;
+    left: calc(1381.55 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
+    top: calc(821.55 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
+    transform: translate(-50%, -30%);
+}

@@ -1,0 +1,94 @@
+.info-hint {
+    // Позиционирование относительно кнопки
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    
+
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    // align-items: center;
+    gap: 8px;
+    width: 112px;
+    height: 56px;
+    flex-shrink: 0;
+
+    background-image: url('./../img/icons/hint.svg');
+}
+
+// Скрываем радио-кнопки, оставляем сверху только кастомные
+.info-hint__radio {
+    /* можно просто display: none; но не видно на screen--reader-е, ниже 
+        способ скрыть правильно */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+
+#biruza:checked .header_title {
+    // color: red;
+    // border: 1px solid red;
+    //  background-image: var(--bg-img-biruza);
+}
+
+
+.info-hint__radio-fake {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+    background-color: gray;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: (0px 4px 6px rgba(0, 0, 0, 0.10));
+
+    &--orange {
+       background-color: var(--ui-orange); 
+    }
+
+    &--biruza {
+       background-color: var(--ui-biruza); 
+    }
+
+    &--gray {
+       background-color: var(--ui-gray); 
+    }
+}
+
+.info-hint__radio:checked + .info-hint__radio-fake {
+    // border: 2px solid red;
+    background-image: url('./../img/icons/check-no-shadow.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    // &--biruza  {
+    //    background-color: yellowgreen; 
+    //    .header_title {
+    //     color: red;
+    //    }
+    // }    
+}
+
+// .info-hint__radio-fake:checked {
+ 
+//     background-color: gray;
+ 
+//     &--orange {
+//        background-color: red; 
+//     }
+
+//     &--biruza {
+//        background-color: green; 
+//     }
+
+//     &--gray {
+//        background-color: blueviolet; 
+//     }
+// }
