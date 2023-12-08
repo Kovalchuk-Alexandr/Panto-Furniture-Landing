@@ -137,3 +137,61 @@ function showHide(name) {
             break;
     }
 }
+
+// Swiper slider
+const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    cssMode: true,
+    direction: "horizontal",
+    loop: true,
+    freeMode: true,
+
+    slidesPerView: 1,
+    // spaceBetween: 42,
+
+    // Responsive breakpoints
+    breakpoints: {
+        500: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 42,
+        },
+    },
+
+    // If we need pagination
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    // Navigation arrows
+    // Original
+    // navigation: {
+    //     nextEl: ".slider__btn--next",
+    //     prevEl: ".slider__btn--prev",
+    // },
+    // navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    // },
+    // Custom
+    navigation: {
+        nextEl: "#sliderNext",
+        prevEl: "#sliderPrev",
+    },
+
+    mousewheel: true,
+    keyboard: true,
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: ".swiper-scrollbar",
+    },
+});

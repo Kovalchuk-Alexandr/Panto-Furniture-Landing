@@ -19,6 +19,7 @@
     background-color: #fafafa;
     border-radius: 20px 20px 0 0;
     text-align: center;
+    margin-top: 50px;
 }
 
 .card__img {
@@ -110,4 +111,9 @@
             transform: scale(1.1);
         }
     }
+}
+
+.swiper-pagination {
+    // margin-top: 30px;
+    bottom: -10px;
 }

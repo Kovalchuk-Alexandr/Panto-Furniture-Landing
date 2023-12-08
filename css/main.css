@@ -136,6 +136,10 @@ font-family: 'DM Sans', sans-serif;
 font-family: 'Inter', sans-serif;
 font-family: 'Gilroy', sans-serif;
 */
+* {
+  border: 1px solid lightgray;
+}
+
 .none {
   display: none !important;
 }
@@ -517,8 +521,6 @@ body {
 
 .products__slider {
   margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
 }
 
 .products__link {
@@ -591,6 +593,7 @@ body {
   background-color: #fafafa;
   border-radius: 20px 20px 0 0;
   text-align: center;
+  margin-top: 50px;
 }
 
 .card__img {
@@ -666,4 +669,37 @@ body {
 }
 .card__btn:hover img {
   transform: scale(1.1);
+}
+
+.swiper-pagination {
+  bottom: -10px;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__btn {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: 0px 7.031px 19.531px 0px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.slider__btn--prev {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--next {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
 }/*# sourceMappingURL=main.css.map */
