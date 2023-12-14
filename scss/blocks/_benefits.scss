@@ -1,15 +1,36 @@
 .benefits {
-    padding: 120px 0;
+    // padding: 120px 0;
+    padding: clamp(60px, 2.679rem + 5.36vw, 120px) 0;
 }
 
 .benefits__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @include tabletSM {
+        grid-template-columns: repeat(2, 1fr);
+        //grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); //Вариант верхнего блока
+        gap: 60px 20px;
+        gap: clamp(30px, 0.982rem + 4.46vw, 60px) 20px;
+    }
+
+    @include mobileXL {
+        grid-template-columns:  1fr;
+        // gap: 60px 20px;
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
 }
 
 .benefits___title {
-    font-weight: 700;
-    font-size: 42px;
     max-width: 260px;
+
+    @include mobileXL {
+        max-width: none;
+        text-wrap: balance;
+    }
 }

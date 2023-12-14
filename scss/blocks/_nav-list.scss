@@ -1,20 +1,68 @@
 .nav-list {
-    justify-self: center;
-    align-self: center;
+    // justify-self: center;
+    // align-self: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 65px;
-
 
     font-weight: 500;
     font-size: 18px;
+
+    // Заменяем миксином, передавая в него контент
+    // @media (max-width: 992px) {
+    //     display: none;
+    // }
+    @include tablet() {
+        display: none;
+    }
 }
 
 .nav-list__item {
+    position: relative;
+    padding-bottom: 10px;
 }
 
 .nav-list__link {
+    transition: opacity 0.1s ease-in;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &--dropdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:after {
+            content: url('./../img/icons/arrow-down.svg');
+            height: 18px;
+        }
+    }
+}
+
+
+// Выпадающее меню шапки
+// Делаем плавным. В скрытом виде курсор все равно активен при наведении, посему
+// pointer-events: none; - Отменяет события по курсору
+.nav-list__sub-nav {
+    opacity: 0;
+    width: 160px;
+    pointer-events: none;   //Отменяем события по курсору
+
+    position: absolute;
+    left: 0;
+    top: calc( 100%);
+    z-index: 5;
+
+    transform: translate(-0%, 20%);
+    transition: all 0.3s ease-in;
+ }
+
+.nav-list__item:hover .nav-list__sub-nav {
+    pointer-events: all;
+    opacity: 1;
+    transform: translate(0%, 0%);
 }

@@ -6,18 +6,37 @@
     <title>Panto</title>
     <link rel="stylesheet" href="./css/main.css">
     <!-- Swiper slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <header class="header none">
+    <header class="header ">
         <div class="container">
 
             <nav class="header__nav nav">
 
-                <a href="#!" class="nav__logo">Panto</a>
+                <!-- Делаем обертку, чтобы вынести логотип в отдельный блок
+                и использовать еще и в футере -->
+                <div class="nav__logo">
+                    <a href="#!" class="logo">Panto</a>
+                </div>
     
+                <!-- Навигация. Для мобильной версии вставляем после 'header' -->
                 <ul class="nav-list">
-                    <li class="nav-list__item"><a href="#!" class="nav-list__link">Furniture</a></li>
+                    <li class="nav-list__item">
+
+                        <a href="#!" class="nav-list__link nav-list__link--dropdown">Furniture</a>
+
+                        <div class="nav-list__sub-nav">
+                            <ul class="sub-nav">
+                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Home</a></li>
+                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Services</a></li>
+                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Products</a></li>
+                                <li class="sub-nav__item"><a href="#!" class="sub-nav__link">Contacts</a></li>
+                            </ul>
+                        </div>
+                    
+                    </li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">Shop</a></li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">About Us</a></li>
                     <li class="nav-list__item"><a href="#!" class="nav-list__link">Contact</a></li>
@@ -31,20 +50,26 @@
                     <img src="./img/icons/cart.svg" alt="Cart" class="cart__img">
                     <div class="cart__count">0</div>
                 </a>
+
+                <button id="open-mobie-nav-btn" class="nav__btn"><img src="./img/icons/mobile-nav.svg"" alt="Open navigation"></button>
                 
             </nav>
 
-            <div class="header__content">
+            <div class="header__content ">
                 <h1 class="header_title">Make your interior more minimalistic & modern</h1>
 
                 <p>Turn your room with panto into a lot more minimalist<br> and modern with ease and speed</p>
 
-                <form action="" class="header__search search-form">
-                    <input type="text" class="search-form__input" placeholder="Search furniture">
-                    <button class="search-form__btn">
-                        <img src="./img/icons/search.svg" alt="Search">
-                    </button>
-                </form>
+                <div class="header__search">
+                    
+                    <form action="" class="search-form">
+                        <input type="text" class="search-form__input" placeholder="Search furniture">
+                        <button class="search-form__btn">
+                            <img src="./img/icons/search.svg" alt="Search">
+                        </button>
+                    </form>
+
+                </div>
 
             </div>
 
@@ -52,7 +77,7 @@
             <div id="item" class="visible"></div>
             <div id="pot" class="visible"></div>
 
-            <div class="header__dot-sofa">
+            <div class="header__dot header__dot--sofa">
                 <button class="info-dot">
                     <div class="info-dot__circle"></div>
                     <div class="info-dot__radius"></div>
@@ -76,21 +101,21 @@
                 </div>
             </div>
 
-            <div class="header__dot-vase" title="Hide">
+            <div class="header__dot header__dot--vase" title="Hide">
                 <button class="info-dot">
                     <div class="info-dot__circle"></div>
                     <div class="info-dot__radius"></div>
                 </button>
             </div>
 
-            <div class="header__dot-item" title="Hide">
+            <div class="header__dot header__dot--item" title="Hide">
                 <button class="info-dot">
                     <div class="info-dot__circle"></div>
                     <div class="info-dot__radius"></div>
                 </button>
             </div>
 
-            <div class="header__dot-pot" title="Hide">
+            <div class="header__dot header__dot--pot" title="Hide">
                 <button class="info-dot">
                     <div class="info-dot__circle"></div>
                     <div class="info-dot__radius"></div>
@@ -101,11 +126,52 @@
 
     </header>
 
-    <section class="benefits none">
+    <!-- Mobile nav -->
+    <!-- Для мобильной навигации, чтобы  не мешали стили, вынесли за контейнер -->
+    <div id="mobile-nav" class="mobile-nav-wrapper ">
+
+        <div class="mobile-nav-header">
+
+            <a href="#cart" class="mobile-cart">
+                <div href="#!" class="cart">
+                    <img src="./img/icons/cart.svg" alt="Cart" class="cart__img">
+                    <div class="cart__count">0</div>
+                </div>
+                Cart
+            </a>
+    
+            <button id="close-mobie-nav-btn" class="mobile-nav-btn-close"><img src="./img/icons/close.svg" alt="Close navigation"></button>
+
+        </div>
+
+        <ul class="mobile-nav">
+            <li class="mobile-nav__item">
+
+                <a href="#!" class="mobile-nav__link mobile-nav__link--dropdown">Furniture</a>
+
+                <ul class="mobile-sub-nav">
+                    <li class="mobile-sub-nav__item"><a href="#!" class="mobile-sub-nav__link">Home</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#!" class="mobile-sub-nav__link">Services</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#!" class="mobile-sub-nav__link">Products</a></li>
+                    <li class="mobile-sub-nav__item"><a href="#!" class="mobile-sub-nav__link">Contacts</a></li>
+                </ul>
+            
+            </li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">Shop</a></li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">About Us</a></li>
+            <li class="mobile-nav__item"><a href="#!" class="mobile-nav__link">Contact</a></li>
+        </ul>
+    </div>
+    <!-- // Mobile nav -->
+
+    <section class="benefits ">
         <div class="container">
             <div class="benefits__grid">
 
-                <h2 class="benefits___title">Why Choosing Us</h2>
+                <!-- Делаем обертку, а содержимое выносим в отдельный блок для множественного использования -->
+                <div class="benefits___title">
+                    <h2 class="title-2">Why Choosing Us</h2>
+                </div>
                 
                 <div class="benefit">
                     <div class="benefit__title">Luxury facilities</div>
@@ -142,21 +208,25 @@
         </div>
     </section>
     
-    <section class="products">
+    <section class="products ">
         <div class="container">
 
-            <h2 class="products__title">Best Selling Product</h2>            
+            <div class="products__title">
+                <h2 class="title-2">Best Selling Product</h2>            
+            </div>
+
             <div class="products__tabs">
 
                 <div class="tab-contorls">
-                    <button class="tab-controls__btn tab-controls__btn--active">Chair</button>
-                    <button class="tab-controls__btn">Beds</button>
-                    <button class="tab-controls__btn">Sofa</button>
-                    <button class="tab-controls__btn">Lamp</button>
+                    <button data-tab="all" class="tab-controls__btn tab-controls__btn--active">All</button>
+                    <button data-tab="chair" class="tab-controls__btn">Chair</button>
+                    <button data-tab="bed" class="tab-controls__btn">Beds</button>
+                    <button data-tab="sofa" class="tab-controls__btn">Sofa</button>
+                    <button data-tab="lamp" class="tab-controls__btn">Lamp</button>
                  </div>
             </div>
 
-            <div class="products__slider">
+            <div class="products__slider ">
 
                 <!-- Slider -->
                 <div class="slider">
@@ -166,7 +236,7 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <article class="card swiper-slide">
+                            <article data-tab-value="chair" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -196,7 +266,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="chair" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -226,7 +296,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="bed" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -234,7 +304,7 @@
                                 </div>
                                 <div class="card__desc">
             
-                                    <div class="card__category">Chair</div>
+                                    <div class="card__category">Bed</div>
                                     <h3 class="card__title">Anjay Chair</h3>
             
                                     <div class="card__rating">
@@ -256,7 +326,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="sofa" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -264,7 +334,7 @@
                                 </div>
                                 <div class="card__desc">
             
-                                    <div class="card__category">Chair</div>
+                                    <div class="card__category">Sofa</div>
                                     <h3 class="card__title">Nyantuy Chair</h3>
             
                                     <div class="card__rating">
@@ -286,7 +356,7 @@
             
                             </article>
                             
-                            <article class="card swiper-slide">
+                            <article data-tab-value="lamp" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -294,7 +364,7 @@
                                 </div>
                                 <div class="card__desc">
             
-                                    <div class="card__category">Chair</div>
+                                    <div class="card__category">Lamp</div>
                                     <h3 class="card__title">Sakarias Armchair</h3>
             
                                     <div class="card__rating">
@@ -316,7 +386,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="sofa" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -324,7 +394,7 @@
                                 </div>
                                 <div class="card__desc">
             
-                                    <div class="card__category">Chair</div>
+                                    <div class="card__category">Sofa</div>
                                     <h3 class="card__title">Baltsar Chair</h3>
             
                                     <div class="card__rating">
@@ -346,7 +416,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="chair" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -376,7 +446,7 @@
             
                             </article>
 
-                            <article class="card swiper-slide">
+                            <article data-tab-value="lamp" class="card swiper-slide">
                                 <a href="#product-page" class="card__link"></a>
                                 <div class="card__photo">
                                     <!-- для rethina указываем srcset"...2x" -->
@@ -384,7 +454,7 @@
                                 </div>
                                 <div class="card__desc">
             
-                                    <div class="card__category">Chair</div>
+                                    <div class="card__category">Lamp</div>
                                     <h3 class="card__title">Nyantuy Chair</h3>
             
                                     <div class="card__rating">
@@ -397,6 +467,186 @@
             
                                     <div class="card__footer">
                                         <div class="card__price" data-value="&euro;">921</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="bed" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-01.png" srcset="./img/products/chair-01@2x.png 2x" alt="Chair01" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Bed</div>
+                                    <h3 class="card__title">Sakarias Armchair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">392</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="chair" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-02.png" srcset="./img/products/chair-02@2x.png 2x" alt="Chair02" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Chair</div>
+                                    <h3 class="card__title">Baltsar Chair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">299</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="lamp" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-03.png" srcset="./img/products/chair-03@2x.png 2x" alt="Chair03" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Lamp</div>
+                                    <h3 class="card__title">Anjay Chair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">519</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="sofa" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-04.png" srcset="./img/products/chair-04@2x.png 2x" alt="Chair04" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Sofa</div>
+                                    <h3 class="card__title">Nyantuy Chair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">921</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="chair" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-01.png" srcset="./img/products/chair-01@2x.png 2x" alt="Chair01" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Chair</div>
+                                    <h3 class="card__title">Sakarias Armchair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">392</div>
+                                        <button class="card__btn">Add to cart
+                                            <img src="./img/icons/plus.svg" alt="Add to cart">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+            
+                            </article>
+
+                            <article data-tab-value="chair" class="card swiper-slide">
+                                <a href="#product-page" class="card__link"></a>
+                                <div class="card__photo">
+                                    <!-- для rethina указываем srcset"...2x" -->
+                                    <img src="./img/products/chair-02.png" srcset="./img/products/chair-02@2x.png 2x" alt="Chair02" class="card__img">
+                                </div>
+                                <div class="card__desc">
+            
+                                    <div class="card__category">Chair</div>
+                                    <h3 class="card__title">Baltsar Chair</h3>
+            
+                                    <div class="card__rating">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star.svg" alt="">
+                                        <img src="./img/icons/star-off.svg" alt="">
+                                    </div>
+            
+                                    <div class="card__footer">
+                                        <div class="card__price" data-value="&euro;">299</div>
                                         <button class="card__btn">Add to cart
                                             <img src="./img/icons/plus.svg" alt="Add to cart">
                                         </button>
@@ -442,8 +692,68 @@
          </div>   
     </section>
 
+    <footer class="footer ">
+        <div class="container container--small">
+
+        <!-- footer__grid -->
+        <div class="footer__grid">
+
+            <!-- Description -->
+            <div class="footer__desc">
+                <div class="footer__logo">
+                    <a href="#!" class="logo">Panto</a>
+                </div>
+                <p>
+                    The advantage of hiring a workspace with us is that gives you comfortable service and all-around facilities.
+                </p>
+            </div>
+            <!-- // Description -->
+
+            <nav class="footer__nav footer__nav--services">
+                <h3 class="footer__nav-title">Services</h3>
+
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#!">Email Marketing</a></li>
+                    <li class="footer__list-item"><a href="#!">Campaigns</a></li>
+                    <li class="footer__list-item"><a href="#!">Branding</a></li>
+                </ul>
+                
+            </nav>
+
+            <nav class="footer__nav footer__nav--furniture">
+                <h3 class="footer__nav-title">Furniture</h3>
+
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#!">Beds</a></li>
+                    <li class="footer__list-item"><a href="#!">Chair</a></li>
+                    <li class="footer__list-item"><a href="#!">All</a></li>
+                </ul>
+
+            </nav>
+
+        </div>            
+        <!-- // footer__grid -->
+
+        <!-- footer__row -->
+        <div class="footer__row">
+
+            <div class="footer__copyright">Copyright © 2023</div>
+
+            <div class="footer__links">
+                <a href="#!">Terms & Conditions</a>
+                <a href="#!">Privacy Policy</a>
+            </div>
+            
+        </div>
+        <!-- // footer__row -->
+
+        </div>
+    </footer>
+
+
     <!-- Swiper slider -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="./swiper/swiper-bundle.min.js"></script>
     
     <script src="./js/main.js"></script>
 </body>

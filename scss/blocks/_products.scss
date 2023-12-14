@@ -6,18 +6,26 @@
 .products__title {
     margin-bottom: 32px;
     text-align: center;
-
-    font-size: 42px;
-    font-weight: 700;
+ 
 }
 
 .products__tabs {
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
+    margin-bottom: clamp(45px, 1.771rem + 5.21vw, 80px);
     text-align: center;
 }
 
 .products__slider {
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
+    margin-bottom: clamp(30px, 0.982rem + 4.46vw, 60px);
+
+    @include desktop {
+        padding: 0 30px;
+    }
+
+    @include mobileXL {
+        padding: 0 20px;
+    }
     // Убираем для слайдера
     // display: flex;
     // justify-content: center;

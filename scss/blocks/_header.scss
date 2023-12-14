@@ -1,7 +1,7 @@
 .header {
     position: relative;
 
-    padding-top: 40px;
+    padding-top: 40px ;
 
     background-color: var(--footer-bg);
     background-image: var(--bg-img-orange);           //url('./../img/header/header-bg.jpg');
@@ -41,28 +41,50 @@
 
     // max-width: 1440px;
     // margin: 0 auto;
+
+    @include tablet() {
+        // position: static;
+    }
+
+    @include tabletSM {
+        padding-top: 20px;
+    }
+
+    @include mobileXL {
+
+        // padding-bottom: 200px;
+        // background-position: center;
+        // aspect-ratio: unset;
+    }
 }
 
 .header__nav {
     position: relative;
     z-index: 4;
-    margin-bottom: 86px;
+    // margin-bottom: 86px;
+    margin-bottom: clamp(20px, 0.071rem + 5.89vw, 86px);
 }
 
 // ----------  Header Content  ----------  
 .header__content {
     position: relative;
-    z-index: 4;
+    z-index: 3;
+    // max-width: 80%;
     text-align: center;
 }
 
 .header_title {
+    margin: 0 auto;
     margin-bottom: 14px;
-    
-    font-size: 80px;
+    // font-size: 80px;
+    // использум 'clamp' - изменение размера шрифта в медиа-адаптации
+    // font-size: clamp(1.75rem, 0.821rem + 4.6vw, 5rem);
+    font-size: clamp(28px, 0.821rem + 4.6vw, 80px);
+ 
     font-weight: 700;
     line-height: 1.3; /* 104px */
     letter-spacing: -0.8px;
+    text-wrap: balance; //сбалансированный перенос текста: верхней и нижней части
     text-transform: capitalize;
 }
 
@@ -70,13 +92,24 @@
     margin: 0 auto;
     max-width: 606px;
     opacity: 0.8;
-    font-size: 24px;
-    // font-weight: 400;
+    text-wrap: balance;
+    // font-size: 24px;
+    font-size: clamp(16px, 0.857rem + 0.71vw, 24px);
     line-height: 1.6; /* 38.4px */
+
+    @include mobileXL {
+
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
 }
 
 .header__search {
+    display: inline-block;
     margin: 45px auto 0;
+
+    @include tabletSM () {
+        display: none;
+    }
 }
 
 // ----------  Elements  ----------
@@ -129,34 +162,43 @@
 }
 
 // ----------  Dots  ----------
-
-.header__dot-sofa {
+.header__dot {
     position: absolute;
+    z-index: 4;
+
+    @include mobileXL {
+        display: none;
+    }
+}
+
+.header__dot--sofa {
+    // position: absolute;
     left: calc(296 * 100% / 1440); //w:1440 - 100% //296 = x // x = 296/1440*100 = 20.56%
     top: calc(685 * 100% / 1084) ;     //h:1084- 100% //685 = x // x = 685/1084*100 = 63.19
 
     text-align: center;
     transform: translate(-50%, -15%);
-    z-index: 4;
-    
+    // z-index: 4;
 }
 
-.header__dot-vase {
-    position: absolute;
+.header__dot--vase {
+    // position: absolute;
     left: calc(113.86 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
     top: calc(753.86 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
     transform: translate(-50%, -50%);
-    z-index: 4;
+    // z-index: 4;
 }
-.header__dot-item {
-    position: absolute;
+.header__dot--item {
+    // position: absolute;
     left: calc(810.86 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
     top: calc(787.86 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
     transform: translate(-50%, -30%);
+    // z-index: 4;
 }
-.header__dot-pot {
-    position: absolute;
+.header__dot--pot {
+    // position: absolute;
     left: calc(1381.55 * 100% / 1440); //w:1440 - 100% //113.86 = x // x = 113.86/1440*100 = 7.907%
     top: calc(821.55 * 100% / 1084) ;     //h:1084- 100% //753.86 = x // x = 753.86/1084*100 = 69.544%
     transform: translate(-50%, -30%);
+    // z-index: 4;
 }

@@ -1,5 +1,6 @@
 .tab-contorls {
     display: inline-flex;
+    flex-wrap: wrap;
     padding: 6px;
     align-items: center;
     border-radius: 44px;
@@ -8,8 +9,11 @@
 
 .tab-controls__btn {
     // display: flex;
-    width: 84px;
-    height: 45px;
+    // 54 x 35 14  (1.87)
+    // width: 84px;
+    // height: 45px;
+    width: clamp(54px, 2.482rem + 4.46vw, 84px);
+    height: clamp(35px, 1.89rem + 1.49vw, 45px);
     padding: 4px;
     justify-content: center;
     align-items: center;
@@ -20,13 +24,14 @@
     // background: #FFF;
 
     color: rgba(31, 31, 31, 0.8);
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: clamp(14px, 0.756rem + 0.6vw, 18px);
     font-weight: 500;
     line-height: 1.8; /* 33.3px */
 
     transition: background-color 0.2s ease-in;
     
-
+    // отмена изменения цвета кнопки по ховеру (1-й {мой} вариант)
     &:hover:not(&--active) {
         background-color: rgba(255, 255, 255, 0.5);
     }
@@ -34,5 +39,9 @@
     &--active {
         background-color: #fff;
 
+        // отмена изменения цвета кнопки по ховеру (2-й вариант)
+        // &:hover {
+        //     background-color: #fff;
+        // }
     }
 }

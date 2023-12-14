@@ -1,0 +1,141 @@
+.footer {
+
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6; /* 24px */
+
+    padding: clamp(60px, 2.024rem + 8.63vw, 118px) 0 56px;
+    // padding: 118px 0 56px;
+
+    a {
+        color: var(--footer-text-color);
+        transition: opacity 0.1s ease-in;
+        
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+}
+
+
+.footer__grid {
+    // margin-bottom: 118px;
+    margin-bottom: clamp(60px, 2.024rem + 8.63vw, 118px);
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 2fr 2fr ;
+    gap: 60px 20px;
+
+    @include tablet {
+        grid-template-columns: 4fr 1fr 3fr 3fr ;
+    }
+
+    @include tabletSM {
+        grid-template-columns: 2fr 2fr ;
+        gap: 40px 20px;
+        justify-content: center;
+
+        // grid-template-areas: 'desc desc' 'serv  .  .  .  furniture' ;
+        // grid-template: 1/1 1/3 2/1 2/span 2  2/4 2/span 2 ;
+    }
+
+    @include mobileXL {
+        grid-template-columns: 1fr ;
+        gap: 20px 0;
+    }
+}
+
+.footer__desc {
+    margin-bottom: 15px;
+    @include tabletSM {
+        grid-column: 1 / 3;
+    }
+    // Для случая, если будет несколько абзацев, закладываем отступ
+    p + p {
+        opacity: 0.8;
+        margin-top: 1em;
+    }
+
+    @include mobileXL {
+        // grid-column: 1 / span 2;
+    }
+
+}
+
+.footer__logo {
+    margin-bottom: 29px;
+}
+
+
+.footer__nav {
+
+    &--services {
+        grid-column-start: 3;
+        
+        @include tabletSM {
+            grid-column-start: auto;
+        }
+
+        @include mobileXL {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &--furniture {
+
+        @include mobileXL {
+            grid-row-start: 3;
+            text-align: center;
+        }
+    }
+
+}
+
+.footer__nav-title {
+    margin-bottom: 20px;
+
+    color: var(--footer-accent);
+    font-family: var(--font-footer-accent);
+    font-size: 17px;
+    letter-spacing: -0.232px;
+}
+
+.footer__list {
+    display: grid;
+    gap: 16px;
+    opacity: 0.8;
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobileXL {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+ }
+
+.footer__copyright {
+    font-family: var(--font-footer-accent);
+    font-size: 15px;
+    letter-spacing: -0.205px;
+    opacity: 0.5;
+}
+
+.footer__links {
+    display: flex;
+    gap: 40px;
+    opacity: 0.8;
+    flex-wrap: wrap;
+
+    @include mobileXL {
+        gap: 20px;
+    }
+}
+
+

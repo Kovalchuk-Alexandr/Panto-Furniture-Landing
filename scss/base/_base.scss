@@ -8,7 +8,7 @@ font-family: 'Gilroy', sans-serif;
 */
 
 * {
-    border: 1px solid lightgray;
+    // border: 1px solid lightgray;
 }
 
 .none {
@@ -25,12 +25,22 @@ html, body {
 }
 
 body {
-    padding-bottom: 20vh;
+    // padding-bottom: 20vh;
 }
 
 .container {
     max-width: 1310px;  // w-1280 + 2 * 15 (padding) = 1310
     padding: 0 15px;
     margin: 0 auto;
+
+    &--small {
+        max-width: 1094px;    // w-1064 + 2 * 15 (padding) = 1094
+
+    }
+}
+
+.title-2 {
+    font-weight: 700;
+    font-size: clamp(32px, 1.702rem + 1.49vw, 42px);
 }
 
