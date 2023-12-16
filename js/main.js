@@ -1,3 +1,4 @@
+   
 const infoBtns = document.querySelectorAll(".info-dot");
 const infoHints = document.querySelectorAll(".info-hint");
 const radio = document.querySelectorAll(".info-hint__radio");
@@ -139,6 +140,62 @@ function showHide(name) {
     }
 }
 
+// Вывод продуктов в цикле из каталога
+const product = document.querySelector(".swiper-wrapper");
+// const product = document.querySelector("#demo");
+
+function showItems() {
+    items.forEach((item) => {
+        console.log(item);
+
+        let textHeader = `
+                <article data-tab-value="${item.category}" class="card swiper-slide">
+                    <a href="#product-page" class="card__link"></a>
+                    <div class="card__photo">
+                        <img src="./img/products/${item.img}" srcset="./img/products/chair-01@2x.png 2x" alt="Chair01" class="card__img">
+                    </div>
+                    <div class="card__desc">
+                        <div class="card__category">${item.category}</div>
+                        <h3 class="card__title">${item.name}</h3>
+
+                        <div class="card__rating">`;
+
+        let star = '';
+        for (i = 0; i < 5; i++) {
+            if (i < item.rating) {
+                star += '<img src="./img/icons/star.svg" alt="Star on">';
+                // star += ' ON ';
+            } else {
+                star += '<img src="./img/icons/star-off.svg" alt="Star off">';
+                // star += ' Off ';
+            }
+        }
+                        //  `   <img src="./img/icons/star.svg" alt="Star on">
+                        //     <img src="./img/icons/star.svg" alt="">
+                        //     <img src="./img/icons/star.svg" alt="">
+                        //     <img src="./img/icons/star.svg" alt="">
+                        //     <img src="./img/icons/star-off.svg" alt="Star off">`
+                                                
+        let textFooter = `</div>
+                        <div class="card__footer">
+                            <div class="card__price" data-value="&euro;">${item.price}</div>
+                            <button class="card__btn" title="Add to cart">Add to cart
+                                <img src="./img/icons/plus.svg" alt="Add to cart">
+                            </button>
+                        </div>
+                     </div>
+                </article>`;
+        
+                // console.log(textHeader);
+                // console.log(star);
+                // console.log(textFooter);
+        let text = textHeader + star + textFooter;
+        product.innerHTML += text;
+    })
+}
+
+showItems();
+
 // Swiper slider
 const swiper = new Swiper(".swiper", {
     // Optional parameters
@@ -210,7 +267,7 @@ for (const btn of tabsBtns) {
     // console.log(btn);
 
     btn.addEventListener('click', function() {
-        console.log(this);
+        // console.log(this);
 
         // Убираем активный класс у всех кнопок
         for (const btn of tabsBtns) {

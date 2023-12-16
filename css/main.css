@@ -651,6 +651,11 @@ html, body {
   }
 }
 
+#demo {
+  display: flex;
+  justify-content: center;
+}
+
 .products__link {
   text-align: center;
 }
@@ -726,6 +731,7 @@ html, body {
 }
 
 .card__img {
+  background: transparent;
   margin-top: -50px;
 }
 
@@ -742,6 +748,7 @@ html, body {
 .card__category {
   color: var(--text-muted);
   font-size: 16px;
+  text-transform: capitalize;
 }
 
 .card__title {
