@@ -25,6 +25,7 @@ html, body {
 }
 
 body {
+    position: relative;
     // padding-bottom: 20vh;
 }
 
@@ -36,6 +37,35 @@ body {
     &--small {
         max-width: 1094px;    // w-1064 + 2 * 15 (padding) = 1094
 
+    }
+}
+
+.container-blur {
+    // position: static;
+    // opacity: 0;
+    // display: none;
+    height: 0;
+
+    &--open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        padding: 35px;
+
+        height: 100vh;
+
+        background: rgba(214, 180, 180, 0.199);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        opacity: 1;
+        z-index: 10;
+
+        @include tabletXS {
+            padding: 0;
+        }
     }
 }
 

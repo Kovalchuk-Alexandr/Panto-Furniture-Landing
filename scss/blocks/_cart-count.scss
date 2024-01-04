@@ -1,0 +1,50 @@
+.count {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.count__box {
+    width: 40px;
+    height: 30px;
+    border-radius: 3px;
+    background: #EAEFF2;
+}
+
+.coutn__input {
+    width: 100%;
+    padding-top: 4px;
+    background-color: transparent;
+    text-align: center;
+
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3; /* 23.4px */
+}
+
+// Скрываем собственные стрелки (эл-ты управления) 'input'
+.coutn__input::-webkit-inner-spin-button,
+.coutn__input::-webkit-outer-spin-button
+ {
+    appearance: none;
+}
+
+.count__controls {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+
+}
+
+// Переводим картинки в блоки, чтобы убрать лишние отступы
+.count__controls img {
+    display: block;
+}
+
+.count__up {
+}
+
+.count__down {
+}

@@ -8,6 +8,7 @@ const items = [
         rating: 0,
         img: "chair-01.png",
         category: "chair",
+        counter: 1,
     },
     {
         id: 1,
@@ -18,6 +19,7 @@ const items = [
         rating: 4,
         img: "chair-02.png",
         category: "chair",
+        counter: 1,
     },
     {
         id: 2,
@@ -28,6 +30,7 @@ const items = [
         rating: 5,
         img: "chair-03.png",
         category: "chair",
+        counter: 1,
     },
     {
         id: 3,
@@ -38,6 +41,7 @@ const items = [
         rating: 3,
         img: "chair-04.png",
         category: "chair",
+        counter: 1,
     },
     {
         id: 4,
@@ -48,6 +52,7 @@ const items = [
         rating: 5,
         img: "bed-emma_eur611.png",
         category: "bed",
+        counter: 1,
     },
     {
         id: 5,
@@ -58,6 +63,7 @@ const items = [
         rating: 3,
         img: "bed-nikol_eur213t.png",
         category: "bed",
+        counter: 1,
     },
     {
         id: 6,
@@ -68,6 +74,7 @@ const items = [
         rating: 4,
         img: "bed-vicento.png",
         category: "bed",
+        counter: 1,
     },
     {
         id: 7,
@@ -78,6 +85,7 @@ const items = [
         rating: 5,
         img: "sofa-Atlanta.png",
         category: "sofa",
+        counter: 1,
     },
     {
         id: 8,
@@ -88,6 +96,7 @@ const items = [
         rating: 5,
         img: "sofa-walter.png",
         category: "sofa",
+        counter: 1,
     },
     {
         id: 9,
@@ -98,6 +107,7 @@ const items = [
         rating: 5,
         img: "sofa_oasis.png",
         category: "sofa",
+        counter: 1,
     },
     {
         id: 10,
@@ -108,6 +118,7 @@ const items = [
         rating: 5,
         img: "lamp-armstrong_trumpet.png",
         category: "lamp",
+        counter: 1,
     },
     {
         id: 11,
@@ -118,6 +129,7 @@ const items = [
         rating: 4,
         img: "lamp-stag-head.png",
         category: "lamp",
+        counter: 1,
     },
     {
         id: 12,
@@ -128,6 +140,7 @@ const items = [
         rating: 4,
         img: "lamp-acanthus.png",
         category: "lamp",
+        counter: 1,
     },
     {
         id: 13,
@@ -138,5 +151,6 @@ const items = [
         rating: 5,
         img: "lamp-angel.png",
         category: "lamp",
+        counter: 1,
     },
 ];

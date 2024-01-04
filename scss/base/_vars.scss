@@ -20,6 +20,8 @@
     --bg-img-biruza: url('./../img/header/bg-biruza.jpg');
     --bg-img-gray: url('./../img/header/bg-gray.jpg');
 
+    --cart-bg: #f7f7f7;
+
     --font-main: 'Gilroy', sans-serif;
     --font-cards: 'Inter', sans-serif;
     --font-footer-accent: 'DM Sans', sans-serif;
@@ -55,9 +57,20 @@
     }
 }
 
+@mixin tabletXS () {
+    @media (max-width: 768px) {
+        @content
+    }
+}
+
 @mixin mobileXL () {
     @media (max-width: 546px) {
         @content
     }
 }
+
+$mobile-xs: 400px;
+$mobile-xl: 546px;
+$mobile: 600px;
+$tablet-xs: 768px;
 

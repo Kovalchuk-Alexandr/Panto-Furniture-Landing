@@ -146,10 +146,10 @@ const product = document.querySelector(".swiper-wrapper");
 
 function showItems() {
     items.forEach((item) => {
-        console.log(item);
+        // console.log(item);
 
         let textHeader = `
-                <article data-tab-value="${item.category}" class="card swiper-slide">
+                <article data-tab-value="${item.category}" data-productid=${item.id} class="card swiper-slide">
                     <a href="#product-page" class="card__link"></a>
                     <div class="card__photo">
                         <img src="./img/products/${item.img}" srcset="./img/products/chair-01@2x.png 2x" alt="Chair01" class="card__img">
@@ -179,7 +179,7 @@ function showItems() {
         let textFooter = `</div>
                         <div class="card__footer">
                             <div class="card__price" data-value="&euro;">${item.price}</div>
-                            <button class="card__btn" title="Add to cart">Add to cart
+                            <button data-click="addToCart" class="card__btn" title="Add to cart">Add to cart
                                 <img src="./img/icons/plus.svg" alt="Add to cart">
                             </button>
                         </div>
@@ -305,14 +305,14 @@ for (const btn of tabsBtns) {
         
         // Update Swiper после использования таба
         swiper.update();
-        swiper.updateSlides('#open-mobie-nav-btn');
+        swiper.updateSlides('#open-mobile-nav-btn');
     })
 }
 
 
 // --------- Mobile nav ---------------------
-const mobileNavOpenBtn = document.querySelector("#open-mobie-nav-btn");
-const mobileNavCloseBtn = document.querySelector("#close-mobie-nav-btn");
+const mobileNavOpenBtn = document.querySelector("#open-mobile-nav-btn");
+const mobileNavCloseBtn = document.querySelector("#close-mobile-nav-btn");
 const mobileNav = document.querySelector("#mobile-nav");
 
 
@@ -323,4 +323,28 @@ mobileNavOpenBtn.onclick = function () {
 mobileNavCloseBtn.onclick = function () {
     mobileNav.classList.remove("mobile-nav-wrapper--open");
 }
+
+
+// --------- Cart open/close ---------------------
+const openCartBtn = document.querySelector("#open-cart-btn");
+const closeCartBtn = document.querySelector("#close-cart-btn");
+const containerBlur = document.querySelector('.container-blur');
+const sectionCart = document.querySelector('.section-cart');
+
+
+
+openCartBtn.onclick = function () {
+    // containerBlur.classList.remove("none");
+    containerBlur.classList.add("container-blur--open");
+    sectionCart.classList.add("section-cart--open");
+
+    // containerBlur.style.display = "block";
+};
+
+closeCartBtn.onclick = function () {
+    // containerBlur.style.display = "none";
+    containerBlur.classList.remove("container-blur--open");
+    // containerBlur.classList.add("none");
+    sectionCart.classList.remove("section-cart--open");
+};
 
