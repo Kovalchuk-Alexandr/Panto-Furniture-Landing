@@ -333,12 +333,14 @@ const sectionCart = document.querySelector('.section-cart');
 
 
 
-openCartBtn.onclick = function () {
-    // containerBlur.classList.remove("none");
+openCartBtn.onclick = function openCart() {
     containerBlur.classList.add("container-blur--open");
     sectionCart.classList.add("section-cart--open");
+};
 
-    // containerBlur.style.display = "block";
+function openCart() {
+    containerBlur.classList.add("container-blur--open");
+    sectionCart.classList.add("section-cart--open");
 };
 
 closeCartBtn.onclick = function () {

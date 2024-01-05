@@ -1,6 +1,26 @@
 const localCart = JSON.parse(localStorage.getItem("cart")) || [];
+var y = window.scrollY;
+console.log(y);
 
-console.log(localCart);
+const header = document.querySelector('header');
+const cartBtnMob = document.querySelector(".cart-btn-mob");
+
+
+window.onscroll = function () {
+    // console.log(window.scrollY);
+    // console.log(header.clientHeight);
+    // console.log(cartBtnMob.scrollTop);
+
+    if (window.scrollY > header.clientHeight) {
+        // console.log('Overflow');
+        cartBtnMob.classList.add("cart-btn-mob--on");
+    } else {
+        // console.log('Downflow');
+        cartBtnMob.classList.remove("cart-btn-mob--on");
+    }
+        
+}
+// console.log(localCart);
 
 // Глобальная переменная для хранения состояния приложения
 const state = {
@@ -11,7 +31,7 @@ const state = {
 const productsContainer = document.querySelector("#productsMainContainer");
 const cartItemsContainer = document.querySelector("#cartItemsHolder");
 const cartTotalCount = document.querySelector("#cartTotalCount");
-const cartCount = document.querySelector("#cartCount");
+const cartCount = document.querySelectorAll(".cart__count");
 const cartCountMobile = document.querySelector("#cartCountMobile");
 const cartTotalPrice = document.querySelector("#cartTotalPrice");
 const cart = document.querySelector("#cart");
@@ -44,7 +64,7 @@ productsContainer.addEventListener("click", function (e) {
 // Ловим событие в корзине
 cart.addEventListener("click", function (e) {
     // console.log('Click');
-    console.log(e.target);
+    // console.log(e.target);
 
     if (e.target.matches('[data-click="minus"]')) {
         console.log('-');
@@ -116,8 +136,12 @@ function calculateTotal() {
 
     cartTotalPrice.innerText = formatedPrice;
     cartTotalCount.innerText = totalCount;
-    cartCount.innerText = totalCount;
     cartCountMobile.innerText = totalCount;
+    
+    cartCount.forEach(function(element) {
+        element.innerText = totalCount;
+    })
+        
 
     // calculateDelivery();
 }
