@@ -280,7 +280,7 @@ for (const btn of tabsBtns) {
         // Получаем значение выбранной категории товаров
         // 'this' - элемент по которому кликнули
         // 'dataset.tab' - значение атрибута 'tab'
-        console.log(this.dataset.tab);
+        // console.log(this.dataset.tab);
         let items = 0;
         // Отображаем нужные товары, скрываем не нужные
         for (const product of tabsProducts ) {
@@ -301,7 +301,7 @@ for (const btn of tabsBtns) {
             }
         }
         
-        console.log(`In "${this.dataset.tab}" tab: ${items} item(s)`);
+        // console.log(`In "${this.dataset.tab}" tab: ${items} item(s)`);
         
         // Update Swiper после использования таба
         swiper.update();
@@ -331,16 +331,16 @@ const closeCartBtn = document.querySelector("#close-cart-btn");
 const containerBlur = document.querySelector('.container-blur');
 const sectionCart = document.querySelector('.section-cart');
 
-
-
-openCartBtn.onclick = function openCart() {
-    containerBlur.classList.add("container-blur--open");
-    sectionCart.classList.add("section-cart--open");
-};
+// openCartBtn.onclick = function openCart() {
+//     containerBlur.classList.add("container-blur--open");
+//     sectionCart.classList.add("section-cart--open");
+// };
 
 function openCart() {
-    containerBlur.classList.add("container-blur--open");
-    sectionCart.classList.add("section-cart--open");
+    if (state.cart.length > 0) {
+        containerBlur.classList.add("container-blur--open");
+        sectionCart.classList.add("section-cart--open");
+    }
 };
 
 closeCartBtn.onclick = function () {

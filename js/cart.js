@@ -1,10 +1,7 @@
 const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-var y = window.scrollY;
-console.log(y);
 
 const header = document.querySelector('header');
 const cartBtnMob = document.querySelector(".cart-btn-mob");
-
 
 window.onscroll = function () {
     // console.log(window.scrollY);
@@ -62,27 +59,27 @@ productsContainer.addEventListener("click", function (e) {
 });
 
 // Ловим событие в корзине
-cart.addEventListener("click", function (e) {
+cartItemsContainer.addEventListener("click", function (e) {
     // console.log('Click');
     // console.log(e.target);
 
     if (e.target.matches('[data-click="minus"]')) {
-        console.log('-');
+        // console.log('-');
         const id = e.target.closest("[data-productid]").dataset.productid;
         itemUpdateCounter(id, "minus", "cart"); //Обновление счетчика в модели
-        console.log("ID: " + id);
+        // console.log("ID: " + id);
         itemUpdateViewCounter(id, "cart"); //Обновление счетчика в проекте
         localStorage.setItem("cart", JSON.stringify(state.cart));
     } else if (e.target.matches('[data-click="plus"]')) {
-        console.log("+");
+        // console.log("+");
         const id = e.target.closest("[data-productid]").dataset.productid;
-        console.log("ID: " + id);
+        // console.log("ID: " + id);
         itemUpdateCounter(id, "plus", "cart");
         itemUpdateViewCounter(id, "cart");
         localStorage.setItem("cart", JSON.stringify(state.cart));
     } else if (e.target.matches('[data-click="close"]')) {
         const id = e.target.closest("[data-productid]").dataset.productid;
-        console.log('Trying to delete Item, ID: ' + id);
+        // console.log('Trying to delete Item, ID: ' + id);
         
         deleteItem(id);
         localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -307,9 +304,9 @@ function itemUpdateCounter (id, type, place) {
         target[itemIndex].counter = count;
         // state.items[itemIndex].counter = count;
     }
-    console.log('In ');
-    console.log(target);
-    console.log(target[itemIndex].counter + ' items');
+    // console.log('In ');
+    // console.log(target);
+    // console.log(target[itemIndex].counter + ' items');
 };
 
 // Ф-я обновления счетчика в разметке
@@ -341,7 +338,7 @@ function itemUpdateViewCounter (id, place) {
         }
     });
 
-    console.log("itemIndex: " + itemIndex);
+    // console.log("itemIndex: " + itemIndex);
 
     if (itemIndex == -1) return;
 
@@ -353,7 +350,7 @@ function itemUpdateViewCounter (id, place) {
         sumToShow = target[itemIndex].sum;
     }
 
-    console.log("countToShow = " + countToShow);
+    // console.log("countToShow = " + countToShow);
 
     // 2.1) Находим в разметке счетчик // [data-count]
     // const currentProduct = productsContainer.querySelector(
