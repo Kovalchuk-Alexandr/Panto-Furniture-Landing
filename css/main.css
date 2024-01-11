@@ -150,8 +150,13 @@ html, body {
   color: var(--text-color);
 }
 
-body {
-  position: relative;
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container {
@@ -164,7 +169,7 @@ body {
 }
 
 .container-blur {
-  height: 0;
+  position: fixed;
 }
 .container-blur--open {
   position: fixed;
@@ -172,7 +177,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 35px 35px 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background: rgba(214, 180, 180, 0.199);
   -webkit-backdrop-filter: blur(4px);
@@ -1097,15 +1104,22 @@ body {
   transition: all 0.3s ease-in;
 }
 .section-cart--open {
-  position: relative;
+  position: fixed;
+  max-width: 1310px;
+  width: 90%;
   pointer-events: auto;
   opacity: 1;
-  margin: 0 auto;
+  margin: 5% auto;
   padding: 5px 0;
   background-color: var(--cart-bg);
   box-shadow: 0 0 10px 10px rgba(124, 123, 123, 0.5411764706);
   border-radius: 6px;
   transform: translateY(0%);
+}
+@media (max-width: 768px) {
+  .section-cart--open {
+    width: 100%;
+  }
 }
 
 .section-cart__btn-close {

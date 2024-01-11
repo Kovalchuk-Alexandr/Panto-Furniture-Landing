@@ -10,12 +10,14 @@
 
     &--open {
         // display: block;
-        position: relative;
+        position: fixed;
+ 
+        max-width: 1310px;
+        width: 90%;
         pointer-events: auto;
         opacity: 1;
-        margin: 0 auto;
+        margin: 5% auto;
         padding: 5px 0;
-        // max-height: 80vh;
 
         background-color: var(--cart-bg);
         // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
@@ -23,6 +25,10 @@
         border-radius: 6px;
 
         transform: translateY(0%);
+
+        @media (max-width: $tablet-xs) {
+            width: 100%;
+        }
     }
 }
 
